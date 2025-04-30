@@ -1,0 +1,10 @@
+﻿<h1>Produkty</h1>
+
+@foreach(Product p in ViewBag.Products)
+{
+    <div>
+        <h2><a href="@Url.Action("Detail", new{ id = p.Id })">@p.Name</a></h2>
+        <p>@p.Description.Substring(0, 100)</p>
+    </div>
+}
+

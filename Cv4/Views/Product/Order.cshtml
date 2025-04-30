@@ -1,0 +1,26 @@
+﻿@model OrderFormViewModel
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(x => x.Name);
+        @Html.TextBoxFor(x => x.Name);
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Email);
+        @Html.TextBoxFor(x => x.Email);
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Age);
+        @Html.TextBoxFor(x => x.Age);
+        @Html.ValidationMessageFor(x => x.Age)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Confirm);
+        @Html.CheckBoxFor(x => x.Confirm);
+        @Html.ValidationMessageFor(x => x.Confirm)
+    </div>
+    <button type="submit">odeslat</button>
+}

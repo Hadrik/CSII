@@ -1,0 +1,28 @@
+﻿<Window x:Class="Cv7.EditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Cv7"
+        mc:Ignorable="d"
+        Title="Editace Zakaznika" Height="250" Width="400">
+    
+    <Window.Resources>
+        <local:CaseConverter x:Key="Converter"/>
+    </Window.Resources>
+    
+    <StackPanel>
+        <DockPanel Margin="5">
+            <Label Content="Jmeno" Width="90"/>
+            <TextBox Text="{Binding FirstName, Converter={StaticResource Converter}}" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        
+        <local:FormRow LabelText="Prijmeni" Value="{Binding LastName}" />
+        
+        <DockPanel Margin="5">
+            <Label Content="Vek" Width="90"/>
+            <TextBox Text="{Binding Age}" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <Button Content="Ulozit" Click="Save"/>
+    </StackPanel>
+</Window>

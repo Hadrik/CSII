@@ -1,0 +1,13 @@
+﻿@{
+    Product p = ViewBag.Product;
+}
+
+<h1>@p.Name</h1>
+<div>
+    @p.Description
+</div>
+<img src="@p.Photo" />
+
+<form action="@Url.Action("AddToCart", new { id = p.Id })" method="post">
+    <button type="submit">Pridat do kosiku</button>
+</form>
